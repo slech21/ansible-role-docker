@@ -83,3 +83,11 @@
     groups: 'docker'
     append: True
   loop: "{{ docker_users }}"
+
+- name: CONFIG | Managing default kernel's parameters for networks
+  sysctl:
+    name:  "{{ item.k }}"
+    value: "{{ item.v }}"
+    state: present
+    reload: no
+  loop: '{{ docker_sysctl_opt }}'

@@ -1,7 +1,5 @@
 ---
 
-# Defaults vars file for docker role
-
 # Repositories and packages management
 # -----------------------------------------------------------------------------
 
@@ -43,7 +41,11 @@ docker_paths:
       path: '/var/lib/docker'
 
 
-# Docker registries certificates
+# Sysconfig: network
+# -----------------------------------------------------------------------------
+docker_sysctl_opt: "{{ _docker_sysctl_opt }}"
+
+# Docker users
 # -----------------------------------------------------------------------------
 docker_users: []
 
@@ -80,7 +82,7 @@ _docker_daemon_options:
   help: False
   icc: True
   insecure-registries: []
-  ip: '0.0.0.0'
+  ip: '127.0.0.1'
   ip-forward: True
   ip-masq: True
   iptables: True
@@ -99,5 +101,5 @@ _docker_daemon_options:
 # Docker Compose variables
 # -----------------------------------------------------------------------------
 docker_install_compose: True
-docker_compose_version: '1.23.2'
+docker_compose_version: '1.27.3'
 docker_compose_path: "{{ docker_paths.files.docker_compose.path }}"
