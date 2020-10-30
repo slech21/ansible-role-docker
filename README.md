@@ -1,11 +1,5 @@
 # docker
 
-[![Build Status](https://img.shields.io/travis/infOpen/ansible-role-docker/master.svg?label=travis_master)](https://travis-ci.org/infOpen/ansible-role-docker)
-[![Build Status](https://img.shields.io/travis/infOpen/ansible-role-docker/develop.svg?label=travis_develop)](https://travis-ci.org/infOpen/ansible-role-docker)
-[![Updates](https://pyup.io/repos/github/infOpen/ansible-role-docker/shield.svg)](https://pyup.io/repos/github/infOpen/ansible-role-docker/)
-[![Python 3](https://pyup.io/repos/github/infOpen/ansible-role-docker/python-3-shield.svg)](https://pyup.io/repos/github/infOpen/ansible-role-docker/)
-[![Ansible Role](https://img.shields.io/ansible/role/8495.svg)](https://galaxy.ansible.com/infOpen/docker/)
-
 Install and configure Docker package.
 
 ## Requirements
@@ -210,7 +204,7 @@ None
 ``` yaml
 - hosts: servers
   roles:
-    - { role: infOpen.docker }
+    - { role: ansible-role-docker }
 ```
 
 ## License
@@ -219,6 +213,11 @@ MIT
 
 ## Author Information
 
-Alexandre Chaussier (for Infopen company)
-- http://www.infopen.pro
-- a.chaussier [at] infopen.pro
+Pierre Sablé (for Dawan company)
+- https://Dawan.fr
+- psable@dawan.fr
+
+## Github Fork
+From Infopen company
+[ansible-role-docker](https://github.com/infOpen/ansible-role-docker)
+thanks to A.Chaussier

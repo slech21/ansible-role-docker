@@ -1,9 +1,9 @@
 ---
 
 galaxy_info:
-  author: 'Alexandre Chaussier'
+  author: 'Pierre Sablé'
   description: 'Ansible role to install and configure docker'
-  company: 'Infopen (http://www.infopen.pro)'
+  company: 'Dawan (https://dawan.fr)'
   license: 'MIT'
   min_ansible_version: '2.5'
   github_branch: 'master'
