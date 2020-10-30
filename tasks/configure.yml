@@ -38,18 +38,18 @@
     owner: "{{ docker_paths.dirs.certs.owner | default('root') }}"
     group: "{{ docker_paths.dirs.certs.group | default('root') }}"
     state: 'directory'
-  with_items: "{{ docker_registries_certificates }}"
+  loop: "{{ docker_registries_certificates }}"
 
 
 - name: 'CONFIG | Manage all instances clients certificates'
   copy:
     content: "{{ item.client_cert }}"
-    dest: "{{ docker_paths.dirs.certs.path }}/{{ item.name }}/client.cert"
+    dest: "{{ docker_paths.dirs.certs.path }}/{{ item.name }}/client.crt"
     mode: "{{ item.mode | default('0400') }}"
     owner: "{{ item.owner | default('root') }}"
     group: "{{ item.group | default('root') }}"
   no_log: True
-  with_items: "{{ docker_registries_certificates }}"
+  loop: "{{ docker_registries_certificates }}"
   when: "item.client_cert is defined"
 
 
@@ -61,7 +61,7 @@
     owner: "{{ item.owner | default('root') }}"
     group: "{{ item.group | default('root') }}"
   no_log: True
-  with_items: "{{ docker_registries_certificates }}"
+  loop: "{{ docker_registries_certificates }}"
   when: "item.client_key is defined"
 
 
@@ -73,7 +73,7 @@
     owner: "{{ item.owner | default('root') }}"
     group: "{{ item.group | default('root') }}"
   no_log: True
-  with_items: "{{ docker_registries_certificates }}"
+  loop: "{{ docker_registries_certificates }}"
   when: "item.ca_cert is defined"
 
 
@@ -82,4 +82,4 @@
     name: "{{ item }}"
     groups: 'docker'
     append: True
-  with_items: "{{ docker_users }}"
+  loop: "{{ docker_users }}"
