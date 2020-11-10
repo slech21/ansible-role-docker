@@ -26,3 +26,4 @@ _docker_system_dependencies:
   - name: 'ca-certificates'
   - name: 'curl'
   - name: 'software-properties-common'
+  - name: 'pass'
